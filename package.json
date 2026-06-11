@@ -1,0 +1,15 @@
+{
+  "name": "agentship-landing",
+  "version": "1.0.0",
+  "description": "Landing page for AgentShip — AI agent setup and implementation service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "PORT=3000 node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": ["ai-agents", "landing-page", "automation"],
+  "license": "UNLICENSED"
+}

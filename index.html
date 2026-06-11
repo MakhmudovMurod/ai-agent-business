@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgentShip — AI Agent Setup & Implementation for Growing Teams</title>
+  <meta name="description" content="We design, build, and deploy AI agents tailored to your business workflows. Start saving hours every week in 7 days or less. Book a free AI workflow audit." />
+  <meta property="og:title" content="AgentShip — AI Agent Setup & Implementation" />
+  <meta property="og:description" content="Practical AI agents for SMBs. Customer support, lead qualification, inbox routing, and more — live in 7 days." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="nav" role="banner">
+  <div class="container">
+    <nav class="nav__inner" aria-label="Main navigation">
+      <a href="#" class="nav__logo" aria-label="AgentShip home">
+        <div class="nav__logo-icon" aria-hidden="true">⚡</div>
+        AgentShip
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="#use-cases">Use Cases</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav__cta">
+        <a href="#contact" class="btn btn--outline">Contact</a>
+        <a href="#contact" class="btn btn--primary">Book Free Audit</a>
+      </div>
+
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="nav__mobile" role="navigation" aria-label="Mobile navigation">
+    <a href="#use-cases">Use Cases</a>
+    <a href="#process">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="btn btn--primary">Book Free Audit →</a>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__blob hero__blob--1"></div>
+    <div class="hero__blob hero__blob--2"></div>
+    <div class="hero__blob hero__blob--3"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero__grid">
+
+      <div class="hero__content">
+        <div class="hero__badge" aria-label="Status: accepting new clients">
+          <span class="hero__badge-dot" aria-hidden="true"></span>
+          Now accepting new clients
+        </div>
+
+        <h1 class="hero__title" id="hero-title">
+          AI agents that actually
+          <span class="gradient-text">work for your business</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          We design, build, and deploy AI agents tailored to your team's real workflows—
+          from customer support triage to lead qualification. Your first high-ROI automation
+          goes live in 7 days.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary btn--xl">
+            Book a free AI workflow audit →
+          </a>
+          <a href="#process" class="btn btn--outline btn--lg">See how it works</a>
+        </div>
+
+        <div class="hero__proof">
+          <div class="hero__proof-item">
+            <span class="hero__proof-icon" aria-hidden="true">✓</span>
+            No long-term lock-in
+          </div>
+          <div class="hero__proof-item">
+            <span class="hero__proof-icon" aria-hidden="true">✓</span>
+            Live in 7 days
+          </div>
+          <div class="hero__proof-item">
+            <span class="hero__proof-icon" aria-hidden="true">✓</span>
+            Human approval for risky actions
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__card-stack">
+          <div class="hero__card">
+            <div class="hero__card-header">
+              <span class="hero__card-label">Live Workflow</span>
+              <span class="hero__card-status">
+                <span style="width:6px;height:6px;background:#14b8a6;border-radius:50%;display:inline-block;"></span>
+                Running
+              </span>
+            </div>
+            <div class="workflow-steps">
+              <div class="workflow-step workflow-step--done">
+                <div class="workflow-step__icon">✓</div>
+                <div class="workflow-step__info">
+                  <div class="workflow-step__name">New inbound email</div>
+                  <div class="workflow-step__desc">support@company.com</div>
+                </div>
+                <div class="workflow-step__bar"><div class="workflow-step__fill" style="width:100%"></div></div>
+              </div>
+              <div class="workflow-step workflow-step--active">
+                <div class="workflow-step__icon">🤖</div>
+                <div class="workflow-step__info">
+                  <div class="workflow-step__name">AI classifies &amp; drafts reply</div>
+                  <div class="workflow-step__desc">Priority: billing question</div>
+                </div>
+                <div class="workflow-step__bar"><div class="workflow-step__fill" style="width:65%"></div></div>
+              </div>
+              <div class="workflow-step">
+                <div class="workflow-step__icon">👤</div>
+                <div class="workflow-step__info">
+                  <div class="workflow-step__name">Agent routes to team</div>
+                  <div class="workflow-step__desc">Awaiting approval</div>
+                </div>
+                <div class="workflow-step__bar"><div class="workflow-step__fill" style="width:0%"></div></div>
+              </div>
+              <div class="workflow-step">
+                <div class="workflow-step__icon">📩</div>
+                <div class="workflow-step__info">
+                  <div class="workflow-step__name">Reply sent + CRM updated</div>
+                  <div class="workflow-step__desc">Response time: &lt; 2 min</div>
+                </div>
+                <div class="workflow-step__bar"><div class="workflow-step__fill" style="width:0%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__floating hero__floating--1">
+            <span class="hero__floating__icon" aria-hidden="true">⏱️</span>
+            <div>
+              <div>4.2 hrs saved</div>
+              <div class="hero__floating__sub">this week alone</div>
+            </div>
+          </div>
+          <div class="hero__floating hero__floating--2">
+            <span class="hero__floating__icon" aria-hidden="true">🎯</span>
+            <div>
+              <div>First agent live</div>
+              <div class="hero__floating__sub">in 7 days</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRUST BAR
+     ============================================================ -->
+<section class="trust" aria-label="Integrations we work with">
+  <div class="container">
+    <p class="trust__label">Works with the tools your team already uses</p>
+    <div class="trust__items">
+      <div class="trust__item">
+        <div class="trust__item-icon">📧</div>
+        Gmail &amp; Outlook
+      </div>
+      <div class="trust__item">
+        <div class="trust__item-icon">💬</div>
+        Slack &amp; Teams
+      </div>
+      <div class="trust__item">
+        <div class="trust__item-icon">🗂️</div>
+        HubSpot &amp; Salesforce
+      </div>
+      <div class="trust__item">
+        <div class="trust__item-icon">📋</div>
+        Notion &amp; Airtable
+      </div>
+      <div class="trust__item">
+        <div class="trust__item-icon">🔗</div>
+        Zapier &amp; Make
+      </div>
+      <div class="trust__item">
+        <div class="trust__item-icon">🛒</div>
+        Shopify &amp; Stripe
+      </div>
+      <div class="trust__item">
+        <div class="trust__item-icon">📞</div>
+        Calendly &amp; Cal.com
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     METRICS
+     ============================================================ -->
+<section class="metrics section" aria-labelledby="metrics-title">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">Why it matters</p>
+      <h2 class="section-title" id="metrics-title">AI agents change how work gets done</h2>
+      <p class="section-body">
+        Manual, repetitive tasks eat into the time your team should spend on work that actually grows the business.
+        AI agents handle the routine so your people can focus on what only humans do well.
+      </p>
+    </div>
+
+    <div class="metrics__grid">
+      <div class="metric-card reveal">
+        <div class="metric-card__value">7 days</div>
+        <div class="metric-card__label">From audit to live agent</div>
+        <div class="metric-card__sub">Your first automation running in under a week</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-1">
+        <div class="metric-card__value">10+ hrs</div>
+        <div class="metric-card__label">Saved per workflow per week</div>
+        <div class="metric-card__sub">Time reclaimed from repetitive manual tasks</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-2">
+        <div class="metric-card__value">24/7</div>
+        <div class="metric-card__label">Always-on availability</div>
+        <div class="metric-card__sub">Agents respond to customers and triggers around the clock</div>
+      </div>
+      <div class="metric-card reveal reveal-delay-3">
+        <div class="metric-card__value">100%</div>
+        <div class="metric-card__label">Human-approved actions</div>
+        <div class="metric-card__sub">You stay in control of every high-stakes decision</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     USE CASES
+     ============================================================ -->
+<section class="use-cases section" id="use-cases" aria-labelledby="use-cases-title">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">Use cases</p>
+      <h2 class="section-title" id="use-cases-title">Real automations for real business problems</h2>
+      <p class="section-body">
+        We focus on the highest-ROI workflows first. Every agent is built around your specific tools,
+        team size, and business rules — not a generic template.
+      </p>
+    </div>
+
+    <div class="use-cases__grid">
+
+      <article class="use-case-card reveal">
+        <div class="use-case-card__icon icon-bg--purple">🎧</div>
+        <h3 class="use-case-card__title">Customer Support Triage</h3>
+        <p class="use-case-card__desc">
+          Classify, prioritize, and draft responses to inbound support tickets.
+          Route complex cases to the right human with full context pre-loaded.
+        </p>
+        <span class="use-case-card__tag">Top ROI</span>
+      </article>
+
+      <article class="use-case-card reveal reveal-delay-1">
+        <div class="use-case-card__icon icon-bg--indigo">🎯</div>
+        <h3 class="use-case-card__title">Lead Qualification &amp; Follow-Up</h3>
+        <p class="use-case-card__desc">
+          Score inbound leads, send personalized follow-up sequences, and
+          push qualified prospects straight into your CRM pipeline.
+        </p>
+        <span class="use-case-card__tag">Sales</span>
+      </article>
+
+      <article class="use-case-card reveal reveal-delay-2">
+        <div class="use-case-card__icon icon-bg--teal">📅</div>
+        <h3 class="use-case-card__title">Appointment Booking</h3>
+        <p class="use-case-card__desc">
+          Let an agent handle scheduling across multiple calendars, send
+          reminders, reschedule on conflict, and log everything automatically.
+        </p>
+        <span class="use-case-card__tag">Operations</span>
+      </article>
+
+      <article class="use-case-card reveal">
+        <div class="use-case-card__icon icon-bg--amber">📬</div>
+        <h3 class="use-case-card__title">Inbox &amp; Email Routing</h3>
+        <p class="use-case-card__desc">
+          Sort, label, summarize, and route emails by intent.
+          Your team sees only what needs a human decision — nothing else.
+        </p>
+        <span class="use-case-card__tag">Productivity</span>
+      </article>
+
+      <article class="use-case-card reveal reveal-delay-1">
+        <div class="use-case-card__icon icon-bg--blue">🧠</div>
+        <h3 class="use-case-card__title">Internal Knowledge Assistant</h3>
+        <p class="use-case-card__desc">
+          Answer team questions using your own docs, SOPs, and knowledge base.
+          Onboard new hires faster and eliminate repetitive internal requests.
+        </p>
+        <span class="use-case-card__tag">HR &amp; Ops</span>
+      </article>
+
+      <article class="use-case-card reveal reveal-delay-2">
+        <div class="use-case-card__icon icon-bg--rose">📄</div>
+        <h3 class="use-case-card__title">Document Processing</h3>
+        <p class="use-case-card__desc">
+          Extract, validate, and route data from invoices, contracts, or
+          forms. Eliminate manual data entry and the errors that come with it.
+        </p>
+        <span class="use-case-card__tag">Finance</span>
+      </article>
+
+      <article class="use-case-card reveal">
+        <div class="use-case-card__icon icon-bg--green">🗃️</div>
+        <h3 class="use-case-card__title">CRM Auto-Updates</h3>
+        <p class="use-case-card__desc">
+          Keep your CRM current without anyone lifting a finger.
+          Calls, emails, and meetings automatically logged with clean summaries.
+        </p>
+        <span class="use-case-card__tag">Sales Ops</span>
+      </article>
+
+      <article class="use-case-card reveal reveal-delay-1">
+        <div class="use-case-card__icon icon-bg--orange">📊</div>
+        <h3 class="use-case-card__title">Reporting &amp; Dashboards</h3>
+        <p class="use-case-card__desc">
+          Agents pull data from multiple sources, build weekly summaries,
+          and deliver insights to Slack or email — no analyst required.
+        </p>
+        <span class="use-case-card__tag">Management</span>
+      </article>
+
+      <article class="use-case-card reveal reveal-delay-2">
+        <div class="use-case-card__icon icon-bg--pink">⚙️</div>
+        <h3 class="use-case-card__title">Custom Ops Automation</h3>
+        <p class="use-case-card__desc">
+          Got a workflow we haven't listed? We scope custom agents for
+          any repeatable, rule-based process your team runs today.
+        </p>
+        <span class="use-case-card__tag">Bespoke</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESS
+     ============================================================ -->
+<section class="process section" id="process" aria-labelledby="process-title">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">How it works</p>
+      <h2 class="section-title" id="process-title">From audit to live agent in four steps</h2>
+      <p class="section-body">
+        We keep the process simple and transparent so you know exactly what's happening at every stage.
+        No black boxes, no endless back-and-forth.
+      </p>
+    </div>
+
+    <div class="process__steps">
+
+      <div class="process-step reveal">
+        <div class="process-step__num" aria-hidden="true">1</div>
+        <h3 class="process-step__title">Free Workflow Audit</h3>
+        <p class="process-step__desc">
+          30-minute call. We map your most time-consuming workflows,
+          identify the best automation candidates, and estimate ROI.
+        </p>
+        <span class="process-step__days">Day 1</span>
+      </div>
+
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-step__num" aria-hidden="true">2</div>
+        <h3 class="process-step__title">Agent Design &amp; Scoping</h3>
+        <p class="process-step__desc">
+          We design the agent architecture, define inputs/outputs, tool
+          integrations, and human-in-the-loop checkpoints. You approve before we build.
+        </p>
+        <span class="process-step__days">Days 2–3</span>
+      </div>
+
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-step__num" aria-hidden="true">3</div>
+        <h3 class="process-step__title">Build &amp; Integration</h3>
+        <p class="process-step__desc">
+          We build the agent and connect it securely to your existing tools—
+          email, CRM, calendar, Slack—whatever your stack looks like.
+        </p>
+        <span class="process-step__days">Days 3–6</span>
+      </div>
+
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-step__num" aria-hidden="true">4</div>
+        <h3 class="process-step__title">Deploy, Train &amp; Monitor</h3>
+        <p class="process-step__desc">
+          We go live, train your team to work alongside the agent,
+          and monitor performance with ongoing optimization included.
+        </p>
+        <span class="process-step__days">Day 7+</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials section" aria-labelledby="testimonials-title">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">What clients say</p>
+      <h2 class="section-title" id="testimonials-title">Teams who made the switch</h2>
+    </div>
+
+    <div class="testimonials__grid">
+
+      <article class="testimonial-card reveal">
+        <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="testimonial-card__quote">
+          "We were skeptical about AI agents — past tools were too generic.
+          AgentShip built exactly what we needed for our support queue.
+          We now handle 3× the volume without adding headcount."
+        </blockquote>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar" aria-hidden="true">SK</div>
+          <div>
+            <div class="testimonial-card__name">Sarah K.</div>
+            <div class="testimonial-card__role">Head of Operations, SaaS company</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="testimonial-card__quote">
+          "The free audit alone was worth an hour of my time. They found
+          two workflows I hadn't even thought about. Our CRM now updates
+          itself — the team didn't believe it when they first saw it."
+        </blockquote>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar" aria-hidden="true">MR</div>
+          <div>
+            <div class="testimonial-card__name">Marcus R.</div>
+            <div class="testimonial-card__role">Founder, e-commerce brand</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+        <blockquote class="testimonial-card__quote">
+          "Setup was painless and the handoff was solid. We had the lead
+          qualification agent live before the week was out, and
+          our close rate improved measurably in the first month."
+        </blockquote>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar" aria-hidden="true">JL</div>
+          <div>
+            <div class="testimonial-card__name">Jamie L.</div>
+            <div class="testimonial-card__role">Sales Director, B2B agency</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRICING
+     ============================================================ -->
+<section class="pricing section" id="pricing" aria-labelledby="pricing-title">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">Pricing</p>
+      <h2 class="section-title" id="pricing-title">Simple, transparent pricing</h2>
+      <p class="section-body">
+        One-time build fees with optional ongoing support. No hidden costs.
+        Start with a free audit — you'll know exactly what it costs before you commit.
+      </p>
+    </div>
+
+    <div class="pricing__grid">
+
+      <div class="pricing-card reveal">
+        <div class="pricing-card__name">Starter</div>
+        <div class="pricing-card__price">
+          <span class="pricing-card__currency">$</span>
+          <span class="pricing-card__amount">1,500</span>
+        </div>
+        <p class="pricing-card__desc">One high-impact agent built and deployed — perfect for your first automation.</p>
+        <div class="pricing-card__divider"></div>
+        <ul class="pricing-card__features">
+          <li>Free workflow audit included</li>
+          <li>1 AI agent built to spec</li>
+          <li>Up to 2 tool integrations</li>
+          <li>Human approval checkpoints</li>
+          <li>Staff walkthrough &amp; handoff</li>
+          <li>14-day post-launch support</li>
+        </ul>
+        <a href="#contact" class="btn btn--outline">Get started</a>
+      </div>
+
+      <div class="pricing-card pricing-card--featured reveal reveal-delay-1">
+        <div class="pricing-card__badge">Most popular</div>
+        <div class="pricing-card__name">Growth</div>
+        <div class="pricing-card__price">
+          <span class="pricing-card__currency">$</span>
+          <span class="pricing-card__amount">3,500</span>
+        </div>
+        <p class="pricing-card__desc">Multi-agent workflow suite for teams ready to automate across departments.</p>
+        <div class="pricing-card__divider"></div>
+        <ul class="pricing-card__features">
+          <li>Free workflow audit included</li>
+          <li>Up to 3 AI agents</li>
+          <li>Up to 5 tool integrations</li>
+          <li>Multi-step workflow orchestration</li>
+          <li>Human-in-the-loop controls</li>
+          <li>Staff training session (1 hr)</li>
+          <li>30-day post-launch support</li>
+          <li>Performance monitoring dashboard</li>
+        </ul>
+        <a href="#contact" class="btn btn--primary">Book free audit →</a>
+      </div>
+
+      <div class="pricing-card reveal reveal-delay-2">
+        <div class="pricing-card__name">Enterprise</div>
+        <div class="pricing-card__price">
+          <span class="pricing-card__amount" style="font-size:2rem;letter-spacing:-0.02em;">Custom</span>
+        </div>
+        <p class="pricing-card__desc">Full-scale AI infrastructure for complex operations and large teams.</p>
+        <div class="pricing-card__divider"></div>
+        <ul class="pricing-card__features">
+          <li>Unlimited agents &amp; workflows</li>
+          <li>Dedicated integration engineer</li>
+          <li>Custom security &amp; compliance review</li>
+          <li>On-premises or private cloud options</li>
+          <li>Team training program</li>
+          <li>Ongoing optimization retainer</li>
+          <li>Priority SLA</li>
+          <li>Quarterly strategy reviews</li>
+        </ul>
+        <a href="#contact" class="btn btn--outline">Talk to us</a>
+      </div>
+
+    </div>
+
+    <p class="pricing__note">
+      Need just one specific task automated?
+      <a href="#contact">Contact us for a custom quote.</a>
+      All plans include a free audit with no commitment to proceed.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="faq section" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:1rem;">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="section-title" id="faq-title">Common questions</h2>
+    </div>
+
+    <div class="faq__grid">
+      <div class="faq__list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__q" aria-expanded="false">
+            What exactly is an AI agent — isn't this just a chatbot?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__a">
+            A chatbot answers questions. An AI agent can plan multi-step tasks, use tools,
+            remember context across a workflow, make decisions, and take real actions —
+            like updating a CRM record, sending an email, or routing a ticket.
+            Think of it as a capable digital team member that works inside your existing systems.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__q" aria-expanded="false">
+            Do I need to replace any of my current tools?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__a">
+            No. We integrate with what you already use — Gmail, HubSpot, Slack, Notion,
+            Salesforce, Airtable, Shopify, and more. The agent lives alongside your existing
+            stack; you don't need to migrate or re-train your team on a new platform.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__q" aria-expanded="false">
+            How do I stay in control of what the agent does?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__a">
+            Every high-stakes action — sending emails externally, making changes to customer
+            records, processing refunds — has a configurable human approval step. You set the
+            rules; the agent asks before it acts on anything flagged as sensitive. Low-risk
+            tasks (internal routing, logging) can run fully automatically.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__q" aria-expanded="false">
+            Is my data safe?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__a">
+            Yes. We use encrypted, scoped API connections — the agent only accesses the
+            specific data it needs for a given workflow. We don't store your business data
+            on our servers, and we can work within your existing data residency requirements.
+            Enterprises can request a private-cloud deployment.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__q" aria-expanded="false">
+            What if the workflow is more complex than expected?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__a">
+            We scope every project during the audit before any work begins. If the scope
+            expands, we flag it transparently and agree on any adjustments before building —
+            no surprise invoices. The audit gives you a clear picture of effort and cost upfront.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__q" aria-expanded="false">
+            Can we add more agents later or expand the integration?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__a">
+            Absolutely. Most clients start with one agent, prove ROI quickly, then expand.
+            We build with modularity in mind so adding workflows, integrations, or new
+            agents later is straightforward and cost-effective.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__q" aria-expanded="false">
+            What happens after the agent is live?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__a">
+            We provide post-launch support on all plans (14 or 30 days depending on tier),
+            covering bug fixes, performance tuning, and any edge cases that surface in
+            real use. After that, you can run the agent independently or opt into
+            our ongoing optimization retainer.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__q" aria-expanded="false">
+            Is the free audit really free?
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__a">
+            Yes, no strings attached. The audit is a 30-minute call where we map your
+            workflows and identify automation opportunities. You'll leave with a clear
+            picture of what's possible — whether or not you decide to work with us.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="faq__aside reveal">
+        <div class="faq__aside-icon" aria-hidden="true">🤝</div>
+        <h3>Still have questions?</h3>
+        <p>
+          The best way to get answers is a 30-minute free workflow audit.
+          We'll dig into your specific situation, identify the best opportunities,
+          and give you a concrete plan — no obligation to proceed.
+        </p>
+        <a href="#contact" class="btn btn--primary">Book your free audit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA BANNER
+     ============================================================ -->
+<section class="cta-section" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-section__inner">
+      <p class="cta-section__eyebrow">Ready to get started?</p>
+      <h2 class="cta-section__title" id="cta-title">
+        Book your free AI workflow audit today
+      </h2>
+      <p class="cta-section__sub">
+        30 minutes. No pitch, no pressure. You'll walk away with a clear map of
+        your highest-ROI automation opportunities — whether you work with us or not.
+      </p>
+      <div class="cta-section__actions">
+        <a href="#contact" class="btn btn--white btn--xl">Book a free audit →</a>
+        <a href="#use-cases" class="btn btn--ghost-white btn--xl">See use cases</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="contact section" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact__grid">
+
+      <div class="contact__info reveal">
+        <p class="eyebrow">Get in touch</p>
+        <h2 id="contact-title">Book your free AI workflow audit</h2>
+        <p>
+          Tell us a little about your business and the workflows giving you the most friction.
+          We'll reach out within one business day to schedule a 30-minute audit call.
+        </p>
+
+        <div class="contact__perks">
+          <div class="contact__perk">
+            <div class="contact__perk-icon" aria-hidden="true">⚡</div>
+            <div>
+              <div class="contact__perk-title">Response within 24 hours</div>
+              <div class="contact__perk-desc">We respond to every enquiry within one business day.</div>
+            </div>
+          </div>
+          <div class="contact__perk">
+            <div class="contact__perk-icon" aria-hidden="true">🔒</div>
+            <div>
+              <div class="contact__perk-title">Confidential &amp; no commitment</div>
+              <div class="contact__perk-desc">Your information is never shared. The audit is free with no obligation.</div>
+            </div>
+          </div>
+          <div class="contact__perk">
+            <div class="contact__perk-icon" aria-hidden="true">🎯</div>
+            <div>
+              <div class="contact__perk-title">Actionable, specific advice</div>
+              <div class="contact__perk-desc">Leave with a concrete automation roadmap, not a vague pitch deck.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact__form reveal reveal-delay-1">
+        <form class="contact-form" novalidate aria-label="Book a free AI workflow audit">
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" for="name">Your name</label>
+              <input class="form__input" type="text" id="name" name="name" placeholder="Alex Johnson" required autocomplete="name" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">Work email</label>
+              <input class="form__input" type="email" id="email" name="email" placeholder="alex@company.com" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" for="company">Company name</label>
+              <input class="form__input" type="text" id="company" name="company" placeholder="Acme Inc." autocomplete="organization" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="team-size">Team size</label>
+              <select class="form__select" id="team-size" name="team-size">
+                <option value="" disabled selected>Select…</option>
+                <option value="1-10">1–10 people</option>
+                <option value="11-50">11–50 people</option>
+                <option value="51-200">51–200 people</option>
+                <option value="200+">200+ people</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="workflow">What workflow is costing you the most time?</label>
+            <textarea
+              class="form__textarea"
+              id="workflow"
+              name="workflow"
+              placeholder="e.g. Our team manually reads and routes every support email. We spend ~3 hours a day just on inbox triage…"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg form__submit">
+            Book my free audit →
+          </button>
+        </form>
+
+        <div class="form__success" role="alert" aria-live="polite">
+          <div class="form__success-icon" aria-hidden="true">✅</div>
+          <h4>You're booked — we'll be in touch!</h4>
+          <p>Expect a reply within one business day to schedule your 30-minute workflow audit.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <div class="footer__logo-icon" aria-hidden="true">⚡</div>
+          AgentShip
+        </div>
+        <p class="footer__tagline">
+          Practical AI agents for growing teams. From audit to live in 7 days.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#use-cases">Customer Support</a></li>
+          <li><a href="#use-cases">Lead Qualification</a></li>
+          <li><a href="#use-cases">Email Routing</a></li>
+          <li><a href="#use-cases">Document Processing</a></li>
+          <li><a href="#use-cases">CRM Automation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="#contact">Free Workflow Audit</a></li>
+          <li><a href="#pricing">Starter Plan</a></li>
+          <li><a href="#pricing">Growth Plan</a></li>
+          <li><a href="#contact">Enterprise</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 AgentShip. All rights reserved.</p>
+      <nav class="footer__legal" aria-label="Legal links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
