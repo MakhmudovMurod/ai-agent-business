@@ -14,11 +14,10 @@ hamburger?.addEventListener('click', () => {
   const isOpen = mobileMenu.classList.contains('open');
   hamburger.setAttribute('aria-expanded', isOpen);
   hamburger.querySelectorAll('span')[0].style.transform = isOpen ? 'rotate(45deg) translate(5px, 5px)' : '';
-  hamburger.querySelectorAll('span')[1].style.opacity = isOpen ? '0' : '';
+  hamburger.querySelectorAll('span')[1].style.opacity  = isOpen ? '0' : '';
   hamburger.querySelectorAll('span')[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px, -5px)' : '';
 });
 
-// Close mobile menu when a link is clicked
 document.querySelectorAll('.nav__mobile a').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
@@ -50,14 +49,11 @@ document.querySelectorAll('.faq-item__q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.closest('.faq-item');
     const isOpen = item.classList.contains('open');
-    // Close all
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    // Toggle current
     if (!isOpen) item.classList.add('open');
   });
 });
 
-// Open first FAQ by default
 const firstFaq = document.querySelector('.faq-item');
 if (firstFaq) firstFaq.classList.add('open');
 
@@ -78,6 +74,52 @@ if (steps.length) {
 }
 
 /* ============================================================
+   METRIC COUNTER ANIMATION
+   ============================================================ */
+function parseMetricValue(text) {
+  const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+  const suffix = text.replace(/[0-9.,\s]/g, '').trim();
+  return { num, suffix };
+}
+
+function animateCounter(el) {
+  const original = el.textContent.trim();
+  const { num, suffix } = parseMetricValue(original);
+  if (isNaN(num)) return;
+
+  const duration = 1200;
+  const start = performance.now();
+  const isFloat = original.includes('.');
+  const prefix = original.startsWith('$') ? '$' : '';
+
+  function update(now) {
+    const elapsed = Math.min(now - start, duration);
+    const progress = 1 - Math.pow(1 - elapsed / duration, 3); // ease-out-cubic
+    const value = progress * num;
+    el.textContent = prefix + (isFloat ? value.toFixed(1) : Math.round(value)) + suffix;
+    if (elapsed < duration) requestAnimationFrame(update);
+    else el.textContent = original;
+  }
+
+  requestAnimationFrame(update);
+}
+
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const valueEl = entry.target.querySelector('.metric-card__value');
+        if (valueEl) animateCounter(valueEl);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+document.querySelectorAll('.metric-card').forEach(el => counterObserver.observe(el));
+
+/* ============================================================
    CONTACT FORM
    ============================================================ */
 const form = document.querySelector('.contact-form');
@@ -89,7 +131,6 @@ form?.addEventListener('submit', (e) => {
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  // Simulate async submission (replace with real endpoint)
   setTimeout(() => {
     form.style.display = 'none';
     if (successEl) successEl.style.display = 'flex';
@@ -97,31 +138,28 @@ form?.addEventListener('submit', (e) => {
 });
 
 /* ============================================================
-   SMOOTH ANCHOR SCROLLING with offset for sticky nav
+   SMOOTH ANCHOR SCROLLING with nav offset
    ============================================================ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
     const target = document.querySelector(anchor.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
-    const offset = 72;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    const top = target.getBoundingClientRect().top + window.scrollY - 72;
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
 
 /* ============================================================
-   PRICING CARD — highlight on hover
+   PRICING CARD — dim siblings on hover
    ============================================================ */
 document.querySelectorAll('.pricing-card').forEach(card => {
   card.addEventListener('mouseenter', () => {
     document.querySelectorAll('.pricing-card').forEach(c => {
-      if (c !== card) c.style.opacity = '0.8';
+      if (c !== card) c.style.opacity = '0.6';
     });
   });
   card.addEventListener('mouseleave', () => {
-    document.querySelectorAll('.pricing-card').forEach(c => {
-      c.style.opacity = '';
-    });
+    document.querySelectorAll('.pricing-card').forEach(c => { c.style.opacity = ''; });
   });
 });
