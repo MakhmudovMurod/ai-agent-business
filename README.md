@@ -49,6 +49,16 @@ EXPOSE 8080
 CMD ["node", "server.js"]
 ```
 
+## Performance
+
+The page uses only local assets — no external fonts, CDN scripts, or third-party requests. This means:
+
+- **No Google Fonts round-trip** — text renders immediately using the OS system font stack (`-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, `system-ui`). No FOIT, no layout shift from font loading.
+- **No single point of external failure** — the page loads fully even when third-party CDNs are slow or blocked.
+- **Minimal first-paint cost** — the browser renders `index.html` → `styles.css` → `script.js` with zero blocking network fetches beyond those three local files.
+
+If you later want a custom web font, load it with `font-display: swap` and self-host the WOFF2 file alongside the other assets to preserve these properties.
+
 ## Customisation
 
 - **Business name / logo**: search for `AgentShip` in `index.html`
